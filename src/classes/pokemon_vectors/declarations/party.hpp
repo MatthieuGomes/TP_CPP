@@ -6,7 +6,7 @@
  * @see Pokemon_Vector
  * @brief Represents a party of Pokemons.
  */
-class Pokemon_Party : public Pokemon_Vector {
+class Pokemon_Party : public virtual Pokemon_Vector {
 public:
     Pokemon_Party(Pokemon first_pkmn);
     Pokemon_Party(int first_pkmn_id);
