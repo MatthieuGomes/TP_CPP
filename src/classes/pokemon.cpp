@@ -23,7 +23,37 @@ Pokemon::Pokemon(int id, string name, int evolution, int maxHealthPoints, int at
     this->attackPoints = attackPoints;
     this->defensePoints = defensePoints;
 }
-
+/**
+ * @brief Constructs a new Pokemon object by copying another Pokemon.
+ * 
+ * @param pkmn The Pokemon object to copy from.
+ * 
+ * @details This copy constructor creates a new Pokemon instance with the same attributes as the provided Pokemon object.
+ */
+Pokemon::Pokemon(const Pokemon &pkmn) : id(pkmn.id), name(pkmn.name), evolution(pkmn.evolution), maxHealthPoints(pkmn.maxHealthPoints), currentHealthPoints(pkmn.currentHealthPoints), attackPoints(pkmn.attackPoints), defensePoints(pkmn.defensePoints) {
+}
+/**
+ * @brief Constructs a new Pokemon from the Pokedex using its ID.
+ * 
+ * @param id The unique identifier for the Pokemon to retrieve from the Pokedex.
+ * @see Pokemon::Pokemon
+ * @details This constructor initializes a Pokemon object by fetching its attributes from the Pokedex singleton instance using the provided ID.
+ * 
+ */
+Pokemon::Pokemon(int id) {
+    Pokedex* pokedex = Pokedex::getInstance();
+    Pokemon pkmn = *pokedex->getPokemon(id);
+    *this = pkmn;   
+}
+/**
+ * @brief Destructor for the Pokemon class.
+ * @details Cleans up resources used by the Pokemon object.
+ * @note Currently, this destructor only outputs a message indicating that the Pokemon has been destroyed.
+ */
+Pokemon::~Pokemon() {
+    std::cout << "Pokemon " << name << " destroyed." << std::endl;
+    // No need to delete this; it will be automatically managed.
+}
 // Getters and Setters
 //// Getters
 /**
@@ -91,6 +121,7 @@ void Pokemon::takeDamage(int damage) {
     if (this->currentHealthPoints < 0) this->currentHealthPoints = 0;
     std::cout << this->name << " now has " << this->currentHealthPoints << " HP." << std::endl;
 }
+//
 
 ///// Utils
 /**

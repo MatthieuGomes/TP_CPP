@@ -20,6 +20,8 @@ class Pokemon {
     public:
         // Constructors
         Pokemon(int id, string name, int evolution, int maxHealthPoints, int attackPoints, int defensePoints); // Invent a pokemon
+        Pokemon(int id); // Get a pokemon from the pokedex by its id
+        Pokemon(const Pokemon &pkm); // Copy constructor
         ~Pokemon(); // Destructor
         
         // Methods
