@@ -12,6 +12,7 @@ add_executable(
 target_include_directories(pokemon PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/classes
+    ${CMAKE_CURRENT_SOURCE_DIR}/classes/pokemon_vectors/declarations
     ${CMAKE_CURRENT_SOURCE_DIR}/utils
 )
 target_link_libraries(
