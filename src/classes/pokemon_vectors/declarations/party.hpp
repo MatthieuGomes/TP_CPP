@@ -28,6 +28,7 @@ public:
      */
     Pokemon_Party(int first_pkmn_id);
     ////
+
     //// Destructor
     /**
      * @brief Destructor for the Pokemon_Party class.
@@ -37,6 +38,7 @@ public:
     ~Pokemon_Party();
     ////
     //
+
     // Getters & Setters
     //// Getters
     /**
@@ -53,6 +55,7 @@ public:
      */
     Pokemon* getPokemon(int index);
     ////
+    
     //// Setters
     /**
      * @brief Adds a Pokemon to the party.

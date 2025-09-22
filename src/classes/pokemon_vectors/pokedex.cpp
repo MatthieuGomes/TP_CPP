@@ -2,13 +2,14 @@
 
 Pokedex *Pokedex::instance = nullptr;
 
+// Constructors & Destructor
+//// Constructors
 Pokedex::Pokedex()
 {
     string nomFichier = "../data/pokemons/pokedex.csv";
     std::ifstream fichier(nomFichier);
-    // Ouvre le fichier
     if (!fichier.is_open())
-    { // V�rifie si le fichier est bien ouvert
+    { 
         std::cerr << "Impossible d'ouvrir le fichier : " << nomFichier << std::endl;
         return;
     }
@@ -48,7 +49,18 @@ Pokedex::Pokedex()
     }
     fichier.close(); // Ferme le fichier
 }
+////
 
+//// Destructor
+Pokedex::~Pokedex()
+{
+    std::cout << "Destroying pokedex" << std::endl;
+}
+////
+//
+
+// Getters & Setters
+//// Getters
 Pokedex* Pokedex::getInstance()
 {
     if (instance == nullptr)
@@ -57,7 +69,5 @@ Pokedex* Pokedex::getInstance()
     }
     return instance;
 }
-Pokedex::~Pokedex()
-{
-    std::cout << "Destroying pokedex" << std::endl;
-}
+////
+//

@@ -1,5 +1,6 @@
 #include "declarations/base.hpp"
-
+// Constructors & Destructor
+//// Destructor
 Pokemon_Vector::~Pokemon_Vector()
 {
     for (Pokemon* pkmn : pokemons) {
@@ -7,7 +8,13 @@ Pokemon_Vector::~Pokemon_Vector()
     }
     pokemons.clear();
 }
+////
+//
 
+// Getters & Setters
+//// Getters
 Pokemon* Pokemon_Vector::getPokemon(int id){
     return new Pokemon(*pokemons.at(id-1));
 }
+////
+//
